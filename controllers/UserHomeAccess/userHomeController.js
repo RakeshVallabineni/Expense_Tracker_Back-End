@@ -35,7 +35,7 @@ exports.getMothlyBudget = async (req, res, next) => {
       expensesResponse.map((e) => {
         amount += e.amount;
       });
-      if (checkBudget.budget > amount) {
+      if (checkBudget.budget >= amount) {
         res.status(200).json({
           message: "Successfull",
           status: "positive",
